@@ -1,10 +1,10 @@
-import {SafeAreaView, View} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import Button from '../../../components/Button';
 import Title from '../../../components/Title';
 import Input from '../../../components/Input';
-const Signin = () => {
+const Signin = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <Title>Welcome back!</Title>
@@ -13,7 +13,12 @@ const Signin = () => {
       <Button>Login</Button>
       <Text style={styles.footerText}>
         Not Registered?
-        <Text style={styles.footerLink}> Sign Up!</Text>
+        <Text
+          onPress={() => navigation.navigate('Signup')}
+          style={styles.footerLink}>
+          {' '}
+          Sign Up!
+        </Text>
       </Text>
     </SafeAreaView>
   );
