@@ -1,15 +1,9 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {Text} from 'react-native';
 import styles from './styles';
 
-const Button = ({onPress, children, type}) => {
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={[styles.container, type === 'blue' ? styles.blueBg : {}]}>
-      <Text style={styles.text}>{children}</Text>
-    </TouchableOpacity>
-  );
+const Title = ({children}) => {
+  return <Text style={styles.title}>{children}</Text>;
 };
 
-export default React.memo(Button);
+export default React.memo(Title);
