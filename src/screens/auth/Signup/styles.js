@@ -4,36 +4,30 @@ import colors from '../../../constants/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginHorizontal: 24,
   },
-  image: {
-    width: '100%',
-    flex: 1,
-  },
-  content: {
-    padding: 46,
-    paddingTop: 0,
-    backgroundColor: colors.white,
-  },
-  title: {
-    color: colors.black,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 22,
-  },
-  subtitle: {
-    fontSize: 15,
+  footerText: {
     color: colors.grey,
+    fontSize: 15,
     textAlign: 'center',
+    marginTop: 28,
+  },
+  footerLink: {
+    color: colors.purple,
+    fontWeight: 'bold',
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
     marginVertical: 16,
   },
-  footer: {
-    position: 'absolute',
-    bottom: 0,
-    height: 50,
-    width: '100%',
-    backgroundColor: colors.white,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+  agreeText: {
+    color: colors.grey,
+    fontSize: 12,
+    marginLeft: 8,
+  },
+  link: {
+    textDecorationLine: 'underline',
   },
 });
 
