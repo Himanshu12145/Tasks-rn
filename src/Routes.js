@@ -6,7 +6,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Signin from './screens/auth/Signin';
 import Signup from './screens/auth/Signup';
 import auth from '@react-native-firebase/auth';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Home from './screens/app/Home';
+import Tasks from './screens/app/Tasks';
+import AddTask from './screens/app/AddTask';
+
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
 
 function Routes() {
   const [initializing, setInitializing] = useState(true);
@@ -25,19 +33,37 @@ function Routes() {
 
   if (initializing) return null;
 
-  if (user) {
-    const logout = () => {
-      auth()
-        .signOut()
-        .then(() => console.log('User signed out!'));
-    };
+  // if (user) {
+  //   const logout = () => {
+  //     auth()
+  //       .signOut()
+  //       .then(() => console.log('User signed out!'));
+  //   };
+  //   return (
+  //     <>
+  //       <Text style={{margin: 40}}>Welcome</Text>
+  //       <Text onPress={logout} style={{margin: 40}}>
+  //         Logout
+  //       </Text>
+  //     </>
+  //   );
+  // }
+
+  const Tabs = () => {
     return (
-      <>
-        <Text style={{margin: 40}}>Welcome</Text>
-        <Text onPress={logout} style={{margin: 40}}>
-          Logout
-        </Text>
-      </>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Tasks" component={Tasks} />
+      </Tab.Navigator>
+    );
+  };
+
+  if (user) {
+    return (
+      <Drawer.Navigator>
+        <Drawer.Screen name="Tabs" component={Tabs} />
+        <Drawer.Screen name="AddTask" component={AddTask} />
+      </Drawer.Navigator>
     );
   }
 
