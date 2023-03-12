@@ -1,12 +1,20 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import 'react-native-gesture-handler';
 
 import Routes from './src/Routes';
 
 function App() {
+  const theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: '#fff',
+    },
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={theme}>
       <Routes />
     </NavigationContainer>
   );
