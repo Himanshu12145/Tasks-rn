@@ -17,7 +17,10 @@ import Categories from '../../../components/Categories';
 import {categories} from '../../../constants/categories';
 import DateInput from '../../../components/DateInput';
 import Button from '../../../components/Button';
+import {useSelector} from 'react-redux';
+
 const AddTask = ({navigation}) => {
+  const user = useSelector(state => state.user.data);
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState();
   const [deadline, setDeadline] = useState(new Date());
@@ -44,7 +47,7 @@ const AddTask = ({navigation}) => {
     setLoading(true);
     firestore()
       .collection('Tasks')
-      .doc('ABC')
+      .doc(user?.uid)
       .set({
         title,
         deadline,
