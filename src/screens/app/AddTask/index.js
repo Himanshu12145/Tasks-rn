@@ -47,12 +47,7 @@ const AddTask = ({navigation}) => {
     setLoading(true);
     firestore()
       .collection('Tasks')
-      .doc(user?.uid)
-      .set({
-        title,
-        deadline,
-        category,
-      })
+      .add({title, deadline, category, checked: false, userId: user?.uid})
       .then(() => {
         setLoading(false);
         console.log('Task Added');

@@ -6,15 +6,35 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './styles';
-import {useSelector} from 'react-redux';
-import Button from '../../../components/Button';
+import {useSelector, useDispatch} from 'react-redux';
+import firestore from '@react-native-firebase/firestore';
 import Header from '../../../components/Header';
 import PlusIcon from '../../../components/PlusIcon';
 import Title from '../../../components/Title';
+import {setTasks} from '../../../store/tasks';
 const Home = ({navigation}) => {
+  const tasks = useSelector(state => state.tasks.data);
   const user = useSelector(state => state.user.data);
+  const dispatch = useDispatch();
+  console.log('tasks >> ', tasks);
+  useEffect(() => {
+    firestore()
+      .collection('Tasks')
+      .where('userId', '==', user?.uid)
+      .get()
+      .then(querySnapshot => {
+        const tasksList = [];
+        querySnapshot.forEach(documentSnapshot => {
+          tasksList.push({
+            uid: documentSnapshot.id,
+            ...(documentSnapshot.data() || {}),
+          });
+        });
+        dispatch(setTasks(tasksList));
+      });
+  }, [user, dispatch]);
   return (
     <SafeAreaView style={styles.container}>
       <Header title="Home" />
