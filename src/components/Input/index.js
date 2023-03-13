@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextInput} from 'react-native';
-import colors from '../../constants/colors';
 import styles from './styles';
+import colors from '../../constants/colors';
 
 const Input = ({outlined, ...props}) => {
   return (

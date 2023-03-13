@@ -16,22 +16,6 @@ function DrawerContent(props) {
       .then(() => console.log('User signed out!'));
   };
 
-  // if (user) {
-  //   const logout = () => {
-  //     auth()
-  //       .signOut()
-  //       .then(() => console.log('User signed out!'));
-  //   };
-  //   return (
-  //     <>
-  //       <Text style={{margin: 40}}>Welcome</Text>
-  //       <Text onPress={logout} style={{margin: 40}}>
-  //         Logout
-  //       </Text>
-  //     </>
-  //   );
-  // }
-
   return (
     <DrawerContentScrollView {...props}>
       <Text style={styles.link} onPress={() => navigation.navigate('Home')}>

@@ -5,35 +5,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  image: {
-    width: '100%',
-    flex: 1,
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 24,
+    marginVertical: 8,
   },
-  content: {
-    padding: 46,
-    paddingTop: 0,
-    backgroundColor: colors.white,
-  },
-  title: {
+  taskText: {
     color: colors.black,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 22,
+    marginLeft: 8,
   },
-  subtitle: {
-    fontSize: 15,
-    color: colors.grey,
-    textAlign: 'center',
-    marginVertical: 16,
-  },
-  footer: {
-    position: 'absolute',
-    bottom: 0,
-    height: 50,
-    width: '100%',
-    backgroundColor: colors.white,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+  checked: {
+    textDecorationLine: 'line-through',
   },
 });
 

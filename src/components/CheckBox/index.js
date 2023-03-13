@@ -1,8 +1,8 @@
 import React from 'react';
-import {Pressable, Text, TouchableOpacity, View} from 'react-native';
+import {Pressable, View} from 'react-native';
 import styles from './styles';
 
-const CheckBox = ({checked, onPress}) => {
+const Checkbox = ({checked, onPress}) => {
   return (
     <Pressable
       onPress={onPress}
@@ -12,4 +12,4 @@ const CheckBox = ({checked, onPress}) => {
   );
 };
 
-export default React.memo(CheckBox);
+export default React.memo(Checkbox);

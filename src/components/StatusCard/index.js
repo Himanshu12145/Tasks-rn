@@ -1,20 +1,22 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Text, Pressable} from 'react-native';
-import styles from './styles';
+import getStyles from './styles';
 
-const PlusIcon = () => {
+const StatusCard = ({label, count, type}) => {
   const navigation = useNavigation();
+  const styles = getStyles(type);
 
   const onPress = () => {
-    navigation.navigate('AddTask');
+    navigation.navigate('Tasks');
   };
 
   return (
     <Pressable style={styles.container} onPress={onPress} hitSlop={8}>
-      <Text style={styles.plus}>+</Text>
+      <Text style={styles.label}>{label}</Text>
+      <Text style={styles.count}>{count}</Text>
     </Pressable>
   );
 };
 
-export default React.memo(PlusIcon);
+export default React.memo(StatusCard);

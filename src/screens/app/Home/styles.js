@@ -5,35 +5,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  image: {
-    width: '100%',
-    flex: 1,
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 24,
   },
-  content: {
-    padding: 46,
-    paddingTop: 0,
-    backgroundColor: colors.white,
+  box: {
+    backgroundColor: colors.lightGrey,
+    borderRadius: 15,
+    padding: 22,
+    marginHorizontal: 24,
+    marginVertical: 72,
   },
   title: {
-    color: colors.black,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 22,
+    color: colors.purple,
+    fontSize: 16,
   },
   subtitle: {
-    fontSize: 15,
-    color: colors.grey,
-    textAlign: 'center',
-    marginVertical: 16,
-  },
-  footer: {
-    position: 'absolute',
-    bottom: 0,
-    height: 50,
-    width: '100%',
-    backgroundColor: colors.white,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+    color: 'rgba(64,53,114,0.5)',
+    fontSize: 12,
+    marginTop: 8,
   },
 });
 
