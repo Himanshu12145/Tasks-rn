@@ -6,13 +6,6 @@
 
 ## Preview of App 🚀
 
-```
-
-Download the application from repo/release
-
----
-
-
 ![WhatsApp Image 2023-03-24 at 8 38 33 PM](https://user-images.githubusercontent.com/66507003/227567471-b3c5aa5f-52de-4bba-8bca-4654ba4f18f1.jpeg)
 ![WhatsApp Image 2023-03-24 at 8 38 33 PM](https://user-images.githubusercontent.com/66507003/227566058-e28f5a73-1779-4312-890a-7f1a3eae330d.jpeg)
 ![WhatsApp Image 2023-03-24 at 8 38 34 PM (1)](https://user-images.githubusercontent.com/66507003/227567481-3854ea9c-e1c0-4154-83a4-9268e57a3435.jpeg)
