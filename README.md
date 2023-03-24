@@ -4,6 +4,15 @@
 > Task keeping and tracking and sorting appplication
 > It is a bare React-Native based project 
 
+
+
+```
+
+Download the application apk file from repo/release
+
+```
+
+
 ## Preview of App 🚀
 
 ![WhatsApp Image 2023-03-24 at 8 38 33 PM](https://user-images.githubusercontent.com/66507003/227567471-b3c5aa5f-52de-4bba-8bca-4654ba4f18f1.jpeg)
